@@ -4,7 +4,7 @@
 
 *What belongs inside a language model, what stays outside, and who controls the difference.*
 
-Every few months a new model arrives that can do more than the last one. And every few months the same question returns, louder: if the model can do almost anything, why design systems at all? Why build an assembly line when there is a box from which the finished car simply rolls out?
+Every few months a new model arrives that can do more than the last one, and the same question returns, louder: if the model can do almost anything, why design systems at all? Why build an assembly line when there is a box from which the finished car simply rolls out?
 
 This essay takes that question seriously. It looks at what the box absorbs as models improve, what it never will, and what “control” over AI can mean when the frontier moves faster than anything we could build ourselves. The answer it arrives at fits on one line: **the model may change every month; the gauge doesn’t.**
 

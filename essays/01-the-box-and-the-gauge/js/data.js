@@ -24,11 +24,11 @@
     contract: '{ items: [ { kind, text, quote } ] }  ·  max 3  ·  quote must occur in the turn',
     gauge: { cases: 10, schemaNeeded: 10, behaviourNeeded: 8 },
     candidates: [
-      { id: 'fa', name: 'Frontier A', when: 'January', local: false, schema: [1,1,1,1,1,1,1,1,1,1], behaviour: [1,1,1,1,0,1,1,1,1,1], note: 'Fits. Expensive, and the text leaves the building.' },
-      { id: 'local', name: 'Local 14B', when: 'on your machine', local: true, schema: [1,1,1,1,1,1,1,1,1,1], behaviour: [1,1,0,1,1,1,1,0,1,1], note: 'Fits, just. Cheap, private, structured output keeps the shape.' },
-      { id: 'tiny', name: 'Tiny local', when: 'on your phone', local: true, schema: [1,0,1,1,0,1,1,0,1,1], behaviour: [1,0,0,1,0,1,0,0,1,0], note: 'Does not fit. Shape breaks on three cases, behaviour on six.' },
-      { id: 'fb', name: 'Frontier B', when: 'March release', local: false, schema: [1,1,1,1,1,1,1,1,1,1], behaviour: [1,1,1,1,1,1,1,1,1,1], note: 'Fits best. The upgrade arrives without a rewrite.' },
-      { id: 'fc', name: 'Frontier C', when: 'June release', local: false, schema: [1,1,1,1,1,1,1,1,1,1], behaviour: [1,0,1,1,0,1,1,0,1,1], note: 'Newer, and it does not fit: it paraphrases instead of quoting. Newer is not automatically better. The gauge decides.' }
+      { id: 'fa', name: 'Frontier A', when: 'January', local: false, schema: [1,1,1,1,1,1,1,1,1,1], behaviour: [1,1,1,1,0,1,1,1,1,1], note: 'Expensive, and the text leaves the building.' },
+      { id: 'local', name: 'Local 14B', when: 'on your machine', local: true, schema: [1,1,1,1,1,1,1,1,1,1], behaviour: [1,1,0,1,1,1,1,0,1,1], note: 'Only just. Cheap, private, and structured output keeps the shape.' },
+      { id: 'tiny', name: 'Tiny local', when: 'on your phone', local: true, schema: [1,0,1,1,0,1,1,0,1,1], behaviour: [1,0,0,1,0,1,0,0,1,0], note: 'Shape breaks on three cases, behaviour on six.' },
+      { id: 'fb', name: 'Frontier B', when: 'March release', local: false, schema: [1,1,1,1,1,1,1,1,1,1], behaviour: [1,1,1,1,1,1,1,1,1,1], note: 'The best fit so far. The upgrade arrives without a rewrite.' },
+      { id: 'fc', name: 'Frontier C', when: 'June release', local: false, schema: [1,1,1,1,1,1,1,1,1,1], behaviour: [1,0,1,1,0,1,1,0,1,1], note: 'Newer, but it paraphrases instead of quoting. Newer is not automatically better. The gauge decides.' }
     ]
   };
 
