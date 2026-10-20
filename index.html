@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AI Thoughts</title>
+<meta name="description" content="Essays on how AI systems should be built when intelligence is a capability, not the centre.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  color-scheme: light;
+  --paper: #f3f6fa; --ink: #13365e; --text: #1d2b3a; --muted: #5a6b80; --line: #b9c8da; --faint: rgba(19, 54, 94, .07);
+  --red: #c8364c; --sheet: #ffffff; --focus: #c8364c;
+  --serif: "Fraunces", Georgia, serif;
+  --sans: "IBM Plex Sans", "Helvetica Neue", Arial, sans-serif;
+  --mono: "IBM Plex Mono", ui-monospace, Menlo, monospace;
+}
+@media (prefers-color-scheme: dark) {
+  :root { color-scheme: dark; --paper: #0f2b4a; --ink: #e4eefa; --text: #dbe6f3; --muted: #9fb4cc; --line: #3a5f87; --faint: rgba(228, 238, 250, .06);
+    --red: #ff8a7a; --sheet: #133457; --focus: #ff8a7a; }
+}
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0; background-color: var(--paper); color: var(--text); font: 400 18px/1.65 var(--sans);
+  background-image: linear-gradient(var(--faint) 1px, transparent 1px), linear-gradient(90deg, var(--faint) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+a { color: var(--ink); text-decoration-thickness: 1px; text-underline-offset: 3px; }
+a:hover { color: var(--red); }
+:focus-visible { outline: 2px solid var(--focus); outline-offset: 3px; }
+code { font: 400 .85em var(--mono); }
+.skip { position: absolute; left: -9999px; }
+.skip:focus { left: 16px; top: 16px; background: var(--sheet); padding: 6px 10px; z-index: 1; }
+
+.hero { max-width: 980px; margin: 0 auto; padding: 72px 24px 28px; border-bottom: 2px solid var(--ink); }
+.series { font: 500 14px var(--mono); color: var(--red); margin: 0 0 14px; }
+h1 { font: 600 clamp(48px, 8vw, 104px)/.95 var(--serif); color: var(--ink); margin: 0; letter-spacing: -.02em; }
+.dek { font: 400 clamp(20px, 2.4vw, 26px)/1.35 var(--serif); color: var(--muted); max-width: 40ch; margin: 18px 0 0; }
+
+main { max-width: 980px; margin: 0 auto; padding: 0 24px 60px; }
+main > section { padding: 40px 0 8px; }
+h2 { font: 500 13px var(--mono); color: var(--red); text-transform: uppercase; letter-spacing: .08em; margin: 0 0 16px; }
+p { margin: 0 0 16px; }
+.lede { max-width: 680px; }
+
+.cards { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 300px), 1fr)); gap: 16px; }
+.card { background: var(--sheet); border: 1.5px solid var(--ink); padding: 18px; display: flex; flex-direction: column; gap: 10px; }
+.card .no { font: 500 12px var(--mono); color: var(--muted); margin: 0; }
+.card h3 { font: 600 26px/1.15 var(--serif); color: var(--ink); margin: 0; }
+.card h3 a { text-decoration: none; }
+.card h3 a:hover { text-decoration: underline; }
+.card dl { margin: 0; font-size: 16px; }
+.card dt { font: 500 12px var(--mono); color: var(--muted); margin-top: 8px; }
+.card dd { margin: 2px 0 0; }
+.card dd.open { font-family: var(--serif); color: var(--red); }
+.card .more { margin: auto 0 0; padding-top: 8px; border-top: 1px solid var(--line); font: 400 14px var(--mono); }
+
+.sources { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--line); }
+.sources li { padding: 14px 0; border-bottom: 1px solid var(--line); display: grid; grid-template-columns: minmax(0, 1fr); gap: 4px; }
+.sources a { font: 600 19px/1.3 var(--serif); }
+.sources .meta { font: 400 13px var(--mono); color: var(--muted); }
+.sources q { font-style: italic; quotes: "“" "”"; }
+
+.method { padding-left: 1.4em; max-width: 680px; }
+.method li { margin-bottom: 8px; }
+.method b { color: var(--ink); }
+
+footer { max-width: 980px; margin: 0 auto; padding: 16px 24px 48px; font-size: 14px; color: var(--muted); }
+footer p { border-top: 1px solid var(--line); padding-top: 16px; }
+
+@media (max-width: 600px) {
+  .hero { padding-top: 48px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  * { transition: none !important; animation: none !important; scroll-behavior: auto !important; }
+}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="hero">
+  <p class="series">blackmath88 · essays</p>
+  <h1>AI Thoughts</h1>
+  <p class="dek">Essays on how AI systems should be built when intelligence is a capability, not the centre.</p>
+</header>
+
+<main id="main">
+
+<section aria-labelledby="h-what">
+  <h2 id="h-what">What this is</h2>
+  <p class="lede">These essays argue for software that calls on intelligence where it is needed, instead of software rebuilt around an agent. They cover semantic computation, memory as reconstructable knowledge, and what control over AI can mean when the frontier moves every month.</p>
+</section>
+
+<section aria-labelledby="h-essays">
+  <h2 id="h-essays">Essays</h2>
+  <ul class="cards">
+    <li class="card">
+      <p class="no">01</p>
+      <h3><a href="essays/01-the-box-and-the-gauge/index.html">The Box and the Gauge</a></h3>
+      <dl>
+        <dt>Question</dt>
+        <dd>What belongs inside a model, what stays outside, and who controls the difference?</dd>
+        <dt>Ends open on</dt>
+        <dd class="open">Who controls the controller?</dd>
+      </dl>
+      <p class="more"><a href="essays/01-the-box-and-the-gauge/index.html">Read, with four interactive figures</a> · <a href="essays/01-the-box-and-the-gauge/essay.md">plain text</a></p>
+    </li>
+  </ul>
+</section>
+
+<section aria-labelledby="h-sources">
+  <h2 id="h-sources">Sources</h2>
+  <p class="lede">The essays build on two source pieces by Miro. They are working syntheses, kept as written.</p>
+  <ul class="sources">
+    <li>
+      <a href="sources/semantic-computation-not-agent-centrism.md">From Agent-Centric AI to Semantic Computation in Software</a>
+      <span class="meta">19 October 2026 · Markdown</span>
+      <span><q>We do not need better software that accommodates agents. We need better software that can call on intelligence.</q></span>
+    </li>
+    <li>
+      <a href="sources/semantic-memory-repositories-and-causal-history-addendum.md">Addendum: Memory as Durable, Reconstructable Project Knowledge</a>
+      <span class="meta">19 October 2026 · Markdown</span>
+      <span><q>Persistent intent. Replaceable intelligence. Causal evidence. Compiled context. Human authority over accepted knowledge.</q></span>
+    </li>
+  </ul>
+</section>
+
+<section aria-labelledby="h-related">
+  <h2 id="h-related">Related</h2>
+  <p class="lede"><a href="https://github.com/blackmath88/blackboard-nextgenui">blackmath88/blackboard-nextgenui</a> is the worked example on the interface layer: the same ideas, built.</p>
+</section>
+
+<section aria-labelledby="h-method">
+  <h2 id="h-method">Method</h2>
+  <ol class="method">
+    <li><b>Look back first.</b> Every argument starts from history: someone has faced this problem before.</li>
+    <li><b>Explain, then simulate.</b> The text makes the case; the figures let you push on it.</li>
+    <li><b>Label what is illustrative.</b> Figures are deterministic and invented for explanation, and say so.</li>
+    <li><b>End each piece open.</b> Every essay closes on the question it could not settle.</li>
+  </ol>
+</section>
+
+</main>
+
+<footer>
+  <p>Static pages, no build. Open any page straight from disk.</p>
+</footer>
+</body>
+</html>
