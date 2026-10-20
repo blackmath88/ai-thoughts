@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Box and the Gauge</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<header class="hero">
+  <p class="series">AI Thoughts · Essay 01</p>
+  <h1>The Box and the Gauge</h1>
+  <p class="dek">What belongs inside a language model, what stays outside, and who controls the difference.</p>
+</header>
+
+<main class="essay">
+
+<section>
+<p>Every few months a new model arrives that can do more than the last one. And every few months the same question returns, louder: if the model can do almost anything, why design systems at all? Why build an assembly line when there is a box from which the finished car simply rolls out?</p>
+<p>This essay takes that question seriously. It looks at what the box absorbs as models improve, what it never will, and what “control” over AI can mean when the frontier moves faster than anything we could build ourselves. The answer it arrives at fits on one line: <strong>the model may change every month; the gauge doesn’t.</strong></p>
+</section>
+
+<section>
+<h2>1 · The bitter lesson and the dynamo</h2>
+<p>The case for the box has history on its side. In 2019 Rich Sutton called it <em>the bitter lesson</em>: over seventy years of AI research, general methods that scale with computation have beaten carefully engineered human knowledge, again and again. Chess, Go, vision, speech. In the 1970s, speech-understanding systems such as Hearsay-II were built from hand-crafted knowledge about sounds, words and grammar. Statistical methods that simply learned from data won.</p>
+<p>So the box is not a naive dream. For <em>capability</em>, betting on general methods has been right.</p>
+<p>But capability is not the same as productivity. In 1990 the economic historian Paul David asked why electricity took about forty years to raise factory productivity. His answer: at first, factories replaced their central steam engine with one big electric motor and changed nothing else. Same shafts, same belts, same layout. The gains arrived only when factories were redesigned around many small motors, one at each machine, and the work was organised around them.</p>
+<figure class="fig" id="fig-dynamo" aria-label="Figure: one big motor versus small motors at each machine"></figure>
+<p>Agent-centric AI is the one big motor dropped into the old factory: a single general model asked to plan, remember, decide and execute. The redesign is the other picture: intelligence as many small, well-placed capabilities inside a system designed for them. Sutton is right about capability. David is right about productivity. Both can be true at once.</p>
+</section>
+
+<section>
+<h2>2 · What’s in the box</h2>
+<p>If models keep improving, what moves into the box? Much more than we tend to admit. Writing and interpreting were always inside. Glue code and plumbing, what Fred Brooks called <em>accidental complexity</em> in 1986, move in quickly. Planning within a task follows. Even recurring process steps can move inside, once they are specified well enough to test.</p>
+<p>Some things never move, however capable the model becomes. Drag the slider and watch.</p>
+<figure class="fig" id="fig-box" aria-label="Figure: what moves into the box as models improve"></figure>
+<p>What stays outside is not computational. It is institutional: <strong>intent</strong> (what we want, Brooks’ essential complexity), <strong>authority</strong> (who may decide), <strong>memory of record</strong> (what was decided and why, reconstructable by anyone later), <strong>evidence</strong>, <strong>accountability</strong>, and the one that makes everything else possible: <strong>the gauge</strong>, the contract and evaluation that tell you whether the box still fits.</p>
+<p class="pull">Capability absorbs the <em>how</em>. It cannot absorb the <em>who</em>, the <em>why</em> and the <em>what counts</em>.</p>
+</section>
+
+<section>
+<h2>3 · The frontier moves fast</h2>
+<p>Here the argument usually turns against architecture. If the frontier moves so fast, any system you design around today’s model is outdated tomorrow. Any model you fine-tune today is a depreciating asset.</p>
+<p>That is true, and it is exactly the case <em>for</em> architecture, of a particular kind. If the model is outdated every few months, the thing worth owning is not the model. It is the <strong>slot</strong> the model plugs into.</p>
+<p>The history here is two centuries old. Interchangeable parts, demonstrated by Honoré Blanc in France in the 1780s and industrialised in American armouries in the early 1800s, did not work because the parts were good. They worked because every part was checked against <strong>gauges</strong>: fixed tolerances, so that any part that fit the gauge fit the gun. Interchangeability is a property of measurement, not of parts.</p>
+<p>For language models, the gauge is a <strong>contract</strong> (the typed input and output of one operation) plus an <strong>eval</strong> (a fixed set of cases every candidate must pass). Try it: one operation, five candidates, one gauge.</p>
+<figure class="fig" id="fig-swap" aria-label="Figure: swapping models in and out of one slot, judged by a gauge"></figure>
+<p>Two things show up. Upgrades arrive without a rewrite: the March release slides in because it fits. And newer is not automatically better: the June release paraphrases instead of quoting and fails the gauge. Without the gauge, swapping models is gambling. With it, it is maintenance.</p>
+</section>
+
+<section>
+<h2>4 · Control is exit</h2>
+<p>Which changes what “control over AI” means. The obvious answer is ownership: own the weights, train your own model. The economist Albert Hirschman offers a better one. In <em>Exit, Voice, and Loyalty</em> (1970) he argued that a customer’s power over a supplier comes from <strong>exit</strong>, the ability to leave.</p>
+<p>A system with a contract and an eval for every operation can leave any provider tomorrow. That is more control than owning a fine-tune that is outdated in six months.</p>
+<p>Owning still has its place. Ronald Coase asked in 1937 why firms exist at all, and Oliver Williamson later named the conditions under which making beats buying: the thing is <em>specific</em> to you, you need it <em>frequently</em>, and outsourcing it is <em>risky</em>. For models, add two more: whether the data may leave at all, and the volume. Rate an operation and see which rung of the ladder it reaches.</p>
+<figure class="fig" id="fig-ladder" aria-label="Figure: control ladder with a make-or-buy calculator"></figure>
+<p>Electricity tells the same story at scale. Around 1900 factories generated their own power; within a few decades the grid won on scale, and Nicholas Carr argued in 2008 that computing would follow into the cloud. But hospitals, data centres and remote sites still keep their own generators, exactly where dependence is unacceptable. Frontier AI will look like the grid. Owned models will look like the generator: smaller, and placed on purpose.</p>
+<div class="scale" role="table" aria-label="Scale of control">
+  <div role="row"><span role="rowheader">Person</span><span role="cell">a local model for private, narrow, high-volume work</span></div>
+  <div role="row"><span role="rowheader">Organisation</span><span role="cell">hosted open weights and fine-tunes for specified operations</span></div>
+  <div role="row"><span role="rowheader">Sector</span><span role="cell">shared models across institutions with the same obligations</span></div>
+  <div role="row"><span role="rowheader">Nation</span><span role="cell">open public models as infrastructure, Switzerland’s Apertus being one example</span></div>
+</div>
+<p>One order matters. You cannot train a specialist for a job you have not defined. Specification comes before control. That is why the architecture argument and the control argument turn out to be the same argument: <strong>you can only own the narrow box</strong>, and you only get narrow boxes by designing the work.</p>
+</section>
+
+<section>
+<h2>5 · Seven theses</h2>
+<ol class="theses">
+  <li>Capability absorbs the how. Intent, authority, memory, evidence and accountability stay outside the box.</li>
+  <li>Agent-centric AI is the big motor in the old factory. The gains come from redesign.</li>
+  <li>The frontier moving fast is an argument for slots, not against architecture.</li>
+  <li>The gauge, contract plus eval, is what makes models interchangeable.</li>
+  <li>Control is the ability to exit, more than the ownership of weights.</li>
+  <li>Own the model only where the operation is specific, frequent, stable, sensitive or huge.</li>
+  <li>Specification comes before control: you can only own the narrow box.</li>
+</ol>
+</section>
+
+<section class="open">
+<h2>Open: who controls the controller?</h2>
+<p>One question stays open. In a well-designed system, something small decides when to call which model: a router, an agenda, perhaps itself a small owned model. It sits outside the big box, but it is a box of its own. Who audits <em>its</em> judgement? With what gauge? And at what scale does that audit stop being a test suite and become an institution?</p>
+</section>
+
+<footer class="prov">
+<p><strong>Provenance.</strong> Written by Claude from a conversation with Miro (blackmath88), building on his essays on semantic computation and memory (in <code>sources/</code>). Figures are illustrative and deterministic; the swap results and the calculator rule are invented for explanation, not measured. References: Sutton, “The Bitter Lesson” (2019); David, “The Dynamo and the Computer” (1990); Brooks, “No Silver Bullet” (1986); Hirschman, <em>Exit, Voice, and Loyalty</em> (1970); Coase, “The Nature of the Firm” (1937); Williamson, <em>Markets and Hierarchies</em> (1975); Carr, <em>The Big Switch</em> (2008); Pacioli, <em>Summa de arithmetica</em> (1494).</p>
+</footer>
+</main>
+
+<script src="js/data.js"></script>
+<script src="js/figures.js"></script>
+</body>
+</html>
